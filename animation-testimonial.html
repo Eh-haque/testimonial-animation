@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Testimonials</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .testimonial-container {
+        display: flex;
+        justify-content: space-around;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+      .testimonial-column {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        animation: scroll-vertical 20s linear infinite;
+      }
+      .testimonial-column:nth-child(2) {
+        animation-duration: 5s;
+      }
+      .testimonial-column:nth-child(3) {
+        animation-duration: 30s;
+      }
+      .testimonial {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      @keyframes scroll-vertical {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      .fade-overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100px;
+        pointer-events: none;
+      }
+      .fade-top {
+        top: 0;
+        background: linear-gradient(to bottom, #f0f0f0, transparent);
+      }
+      .fade-bottom {
+        bottom: 0;
+        background: linear-gradient(to top, #f0f0f0, transparent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testimonial-container">
+      <div class="testimonial-column">
+        <div class="testimonial">
+          <p>"Great service! Highly recommended."</p>
+          <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+          <p>"Amazing product quality."</p>
+          <p>- Jane Smith</p>
+        </div>
+        <div class="testimonial">
+          <p>"Very satisfied with my purchase."</p>
+          <p>- Bob Johnson</p>
+        </div>
+      </div>
+      <div class="testimonial-column">
+        <div class="testimonial">
+          <p>"Excellent customer support!"</p>
+          <p>- Alice Brown</p>
+        </div>
+        <div class="testimonial">
+          <p>"Fast shipping and great packaging."</p>
+          <p>- Charlie Davis</p>
+        </div>
+        <div class="testimonial">
+          <p>"Will definitely buy again."</p>
+          <p>- Eva Wilson</p>
+        </div>
+      </div>
+      <div class="testimonial-column">
+        <div class="testimonial">
+          <p>"Top-notch quality products."</p>
+          <p>- Frank Miller</p>
+        </div>
+        <div class="testimonial">
+          <p>"Exceeded my expectations!"</p>
+          <p>- Grace Taylor</p>
+        </div>
+        <div class="testimonial">
+          <p>"Best customer experience ever."</p>
+          <p>- Henry Clark</p>
+        </div>
+      </div>
+      <div class="fade-overlay fade-top"></div>
+      <div class="fade-overlay fade-bottom"></div>
+    </div>
+  </body>
+</html>
